@@ -83,10 +83,55 @@
 	    function test() {
               age_mu = 60.3;  // mean of age distribution
               age_sigma = 14.4;  // std dev of age distribution
-              weights = [0.5823305406093363, 0.4447773784715664, 0.3780998787882947, -0.24936232801694033, 0.23271058640658165, 0.22194415044916416, -0.19096074484891587, -0.18043315680694574, -0.17800135417611468, -0.13696322854364734, 0.1328637522659141, 0.07879009081158225, -0.07185119306538153, -0.05171550838967454, 0.042491833983521264, -0.027986269788450466, 0.02259789402761426, 0.015018209680008613, -0.0046296250086506575];
+              weights = {
+                  "med_relief": 0.5823305406093363,
+                  "no_attacks": 0.4447773784715664,
+                  "seasonal_attacks": 0.3780998787882947,
+                  "multiple_attacks": -0.24936232801694033,
+                  "sex": 0.23271058640658165,
+                  "thyroid": 0.22194415044916416,
+                  "diabetes": -0.19096074484891587,
+                  "constant_pain": -0.18043315680694574,
+                  "triggers": -0.17800135417611468,
+                  "cancer": -0.13696322854364734,
+                  "electric_pain": 0.1328637522659141,
+                  "age": 0.07879009081158225,
+                  "monthly_attacks": -0.07185119306538153,
+                  "muskuloskeletal": -0.05171550838967454,
+                  "daily_attacks": 0.042491833983521264,
+                  "weekly_attacks": -0.027986269788450466,
+                  "pain_side": 0.02259789402761426,
+                  "trigeminal_deficit": 0.015018209680008613,
+                  "psychiatric": -0.0046296250086506575
+              };
 //	      alert(`The function 'test' is executed`);
-	      alert(dot(weights, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]));
+//	      alert(dot(weights, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]));
+	      alert(dot2(weights, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]));
 	    }
+            function get_value_from_key(key) {
+                // TODO: do subcases for each key option
+                if (key == "med_relief") {
+                    bool_yes = document.getElementById("med_relief_yes").checked;
+                    bool_no = document.getElementById("med_relief_no").checked;
+                    if (!bool_yes & !bool_no) {
+                        alert("Please choose an answer for 'med_relief'!");
+                    }
+                    else {
+                        if (bool_yes) {answer = "yes";} else {answer = "no";}
+                        alert("Answer for 'med_relief' is: " + answer);
+                    }
+                }
+            }
+            function dot2(w, pat) {
+                var result = 0;
+                for (var key in w) {
+                    if (w.hasOwnProperty(key)) {
+                        answer_value = get_value_from_key(key);
+                        result += w[key] * answer_value;
+                    }
+                }
+                return result;
+            }
             dot = (a, b) => a.map((x, i) => a[i] * b[i]).reduce((m, n) => m + n);
 	  </script>
 	</body>
