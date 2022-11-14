@@ -74,8 +74,8 @@ permalink: /grades
 <input type="button" value="Get pain stage" onclick="test();"/>
 <script>
 function test() {
-age_mu = 60.3;  // mean of age distribution
-age_sigma = 14.4;  // std dev of age distribution
+age_mu = 60.3;
+age_sigma = 14.4;
 weights = {
 "med_relief": 0.5823305406093363,
 "no_attacks": 0.4447773784715664,
@@ -104,11 +104,10 @@ message = {
 3: "3 - 5 years of pain relief",
 4: "more than 5 years of pain relief (superresponder)"
 }
-results = dot2(weights);  // This computes the pain stage. (individual rating, interval)
+results = dot2(weights);
 alert("The individual rating is: " + results[0] + ", i.e. " + message[results[1]]);
 }
 function get_value_from_key(key) {
-// TODO: do subcases for each key option
 list_pain_frequency = ["no_attacks", "seasonal_attacks", "multiple_attacks", "constant_pain", "monthly_attacks", "daily_attacks", "weekly_attacks"];
 if (key == "med_relief") {
 bool_yes = document.getElementById("med_relief_yes").checked;
@@ -192,7 +191,6 @@ var result = 0;
 for (var key in w) {
 if (w.hasOwnProperty(key)) {
 answer_value = get_value_from_key(key);
-//			alert("Value for '" + key + "': " + answer_value);
 result += w[key] * answer_value;
 }
 }
