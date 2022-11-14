@@ -3,3 +3,5 @@ title: Projects of TH Latypov
 description: Projects and demos
 baseurl: "/slideshows"
 url: "https://latypovt.github.io/"
+
+include: ['_pages']

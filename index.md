@@ -1,10 +1,5 @@
 # slideshows.github.io
 ---
-nav_order: 1
+layout: default
 ---
 
-# Welcome
-
-Welcome to Hodaie Lab
-
-[DEMO Stages](weights_demo/demo.html)
