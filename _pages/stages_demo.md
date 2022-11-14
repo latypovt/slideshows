@@ -212,4 +212,4 @@ This framework can help you to estimate the severity of your trigeminal neuralgi
 <label for="pain_side_left">Left</label> 
 <br>
 <br>
-<input type="button" class="btn btn-primary fs-5 mb-4 mb-md-0 mr-2" value="Get pain stage" onclick="test();"/>
+<input type="button" class="btn btn-primary fs-5 mb-4 mb-md-0 mr-2" value="Get pain grade" onclick="test();"/>
