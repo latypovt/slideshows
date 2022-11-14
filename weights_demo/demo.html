@@ -8,7 +8,6 @@
   </head>
 
 	<body>
-	  <form onsubmit="test()">
             <h5>Medication relief</h5>
 	    <input type="radio" name="med_relief" id="med_relief_yes" />
 	    <label for="med_relief_yes">yes</label> 
@@ -77,8 +76,7 @@
 	    <input type="radio" name="pain_side" id="pain_side_left" />
 	    <label for="pain_side_left">Left</label> 
 	    <br>
-	    <input type="submit" value="Get pain stage"/>
-	  </form>
+	    <input type="button" value="Get pain stage" onclick="test();"/>
 	  <script>
 	    function test() {
               age_mu = 60.3;  // mean of age distribution
