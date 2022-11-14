@@ -36,7 +36,7 @@ message = {
 4: "more than 5 years of pain relief (superresponder)"
 };
 results = dot2(weights);
-alert("The individual rating is: " + results[0] + ", i.e. " + message[results[1]]);
+alert("The calculated rating is: " + results[0] + ", it corresponds to the category of '" + message[results[1]] + "' in our data" );
 }
 function get_value_from_key(key) {
 list_pain_frequency = ["no_attacks", "seasonal_attacks", "multiple_attacks", "constant_pain", "monthly_attacks", "daily_attacks", "weekly_attacks"];
