@@ -72,3 +72,133 @@ permalink: /grades
 <label for="pain_side_left">Left</label> 
 <br>
 <input type="button" value="Get pain stage" onclick="test();"/>
+<script>
+function test() {
+age_mu = 60.3;  // mean of age distribution
+age_sigma = 14.4;  // std dev of age distribution
+weights = {
+"med_relief": 0.5823305406093363,
+"no_attacks": 0.4447773784715664,
+"seasonal_attacks": 0.3780998787882947,
+"multiple_attacks": -0.24936232801694033,
+"sex": 0.23271058640658165,
+"thyroid": 0.22194415044916416,
+"diabetes": -0.19096074484891587,
+"constant_pain": -0.18043315680694574,
+"triggers": -0.17800135417611468,
+"cancer": -0.13696322854364734,
+"electric_pain": 0.1328637522659141,
+"age": 0.07879009081158225,
+"monthly_attacks": -0.07185119306538153,
+"muskuloskeletal": -0.05171550838967454,
+"daily_attacks": 0.042491833983521264,
+"weekly_attacks": -0.027986269788450466,
+"pain_side": 0.02259789402761426,
+"trigeminal_deficit": 0.015018209680008613,
+"psychiatric": -0.0046296250086506575
+};
+message = {
+0: "non-responder",
+1: "less than 1 year of pain relief",
+2: "1 - 3 years of pain relief",
+3: "3 - 5 years of pain relief",
+4: "more than 5 years of pain relief (superresponder)"
+}
+results = dot2(weights);  // This computes the pain stage. (individual rating, interval)
+alert("The individual rating is: " + results[0] + ", i.e. " + message[results[1]]);
+}
+function get_value_from_key(key) {
+// TODO: do subcases for each key option
+list_pain_frequency = ["no_attacks", "seasonal_attacks", "multiple_attacks", "constant_pain", "monthly_attacks", "daily_attacks", "weekly_attacks"];
+if (key == "med_relief") {
+bool_yes = document.getElementById("med_relief_yes").checked;
+bool_no = document.getElementById("med_relief_no").checked;
+if (!bool_yes && !bool_no) {
+alert("Please choose an answer for 'med_relief'!");
+}
+else {
+if (bool_yes) { return 1; } else { return -1; }
+}
+}
+else if (key == "sex") {
+bool_male = document.getElementById("sex_male").checked;
+bool_female = document.getElementById("sex_female").checked;
+if (!bool_female && !bool_male) {
+alert("Please choose an answer for 'sex'!");
+}
+else {
+if (bool_male) { return -1; } else { return 1; }
+}
+}
+else if (key == "age") {
+age = parseInt(document.getElementById(key).value);
+age = (age_mu - age) / age_sigma;
+return age;
+}
+else if (key == "psychiatric") {
+if (document.getElementById(key).checked) { return 1; } else { return -1; }
+}
+else if (key == "trigeminal_deficit") {
+if (document.getElementById(key).checked) { return 1; } else { return -1; }
+}
+else if (key == "pain_side") {
+bool_right = document.getElementById("pain_side_right").checked;
+bool_left = document.getElementById("pain_side_left").checked;
+if (!bool_right && !bool_left) {
+alert("Please choose an answer for 'pain_side'!");
+}
+else {
+if (bool_right) { return -1; } else { return 1; }
+}
+}
+else if (key == "thyroid") {
+if (document.getElementById(key).checked) { return 1; } else { return -1; }
+}
+else if (key == "diabetes") {
+if (document.getElementById(key).checked) { return 1; } else { return -1; }
+}
+else if (key == "triggers") {
+if (document.getElementById(key).checked) { return 1; } else { return -1; }
+}
+else if (key == "cancer") {
+if (document.getElementById(key).checked) { return 1; } else { return -1; }
+}
+else if (key == "electric_pain") {
+if (document.getElementById(key).checked) { return 1; } else { return -1; }
+}
+else if (key == "muskuloskeletal") {
+if (document.getElementById(key).checked) { return 1; } else { return -1; }
+}
+else if (list_pain_frequency.includes(key)) {
+bool_no_attacks = document.getElementById("no_attacks").checked;
+bool_seasonal_attacks = document.getElementById("seasonal_attacks").checked;
+bool_multiple_attacks = document.getElementById("multiple_attacks").checked;
+bool_constant_pain = document.getElementById("constant_pain").checked;
+bool_monthly_attacks = document.getElementById("monthly_attacks").checked;
+bool_daily_attacks = document.getElementById("daily_attacks").checked;
+bool_weekly_attacks = document.getElementById("weekly_attacks").checked;
+if (!bool_no_attacks && !bool_seasonal_attacks && !bool_multiple_attacks && !bool_constant_pain && !bool_monthly_attacks && !bool_daily_attacks && !bool_weekly_attacks)
+{alert("Please choose an answer for pain frequency!");}
+else {
+if (document.getElementById(key).checked) { return 1; } else { return -1; }
+}
+} else {
+alert("not covered yet");
+}
+}
+function dot2(w) {
+upper_bounds = [-0.412398, -0.112271, 0.300276, 0.746593, Infinity];
+var result = 0;
+for (var key in w) {
+if (w.hasOwnProperty(key)) {
+answer_value = get_value_from_key(key);
+//			alert("Value for '" + key + "': " + answer_value);
+result += w[key] * answer_value;
+}
+}
+i = 0;
+while (result > upper_bounds[i]) { i++; }
+return [result, i];
+}
+dot = (a, b) => a.map((x, i) => a[i] * b[i]).reduce((m, n) => m + n);
+</script>
