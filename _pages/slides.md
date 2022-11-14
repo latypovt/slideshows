@@ -6,7 +6,7 @@ permalink: /RD_QR_slide/index.html
 
 # Welcome
 
-Here you can find a supplementary materials and the interactive demo for grading Trigeminal Neuralgia based on clinical symptoms.
+Here you can find supplementary materials and the interactive demo for grading Trigeminal Neuralgia based on clinical symptoms.
 
 
 [To the supplementary slides](slides.html){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
