@@ -205,4 +205,5 @@ dot = (a, b) => a.map((x, i) => a[i] * b[i]).reduce((m, n) => m + n);
 <input type="radio" name="pain_side" id="pain_side_left" />
 <label for="pain_side_left">Left</label> 
 <br>
+<br>
 <input type="button" value="Get pain stage" onclick="test();"/>
