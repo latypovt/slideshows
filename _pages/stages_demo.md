@@ -131,34 +131,38 @@ return [result, i];
 }
 dot = (a, b) => a.map((x, i) => a[i] * b[i]).reduce((m, n) => m + n);
 </script>
-<h5>Medication relief</h5>
+<h4>Trigeminal neuralgia grading framework</h4>
+This framework can help you to estimate the severity of your trigeminal neuralgia and expected duration of response to MVD/GK surgery. Please answer the following question
+
+
+<h5>Does the TN medication provides you with sufficient relief?</h5>
 <input type="radio" name="med_relief" id="med_relief_yes" />
 <label for="med_relief_yes">yes</label> 
 <input type="radio" name="med_relief" id="med_relief_no" />
 <label for="med_relief_no">no</label> 
 <br>
-<h5>Frequency of pain episodes</h5>
+<h5>Rare attacks (few per yer)</h5>
 <br>
 <input type="radio" name="attacks" id="no_attacks" />
-<label for="no_attacks">Rare attacks?</label> 
+<label for="no_attacks">Rare attacks (few per year)</label> 
 <br>
 <input type="radio" name="attacks" id="seasonal_attacks" />
-<label for="seasonal_attacks">Seasonal attacks?</label> 
+<label for="seasonal_attacks">Seasonal attacks</label> 
 <br>
 <input type="radio" name="attacks" id="monthly_attacks" />
-<label for="monthly_attacks">Monthly attacks?</label> 
+<label for="monthly_attacks">Monthly attacks</label> 
 <br>
 <input type="radio" name="attacks" id="weekly_attacks" />
-<label for="weekly_attacks">Weekly attacks?</label> 
+<label for="weekly_attacks">Weekly attacks</label> 
 <br>
 <input type="radio" name="attacks" id="daily_attacks" />
-<label for="daily_attacks">Daily attacks?</label> 
+<label for="daily_attacks">Daily attacks</label> 
 <br>
 <input type="radio" name="attacks" id="multiple_attacks" />
-<label for="multiple_attacks">Multiple attacks per day?</label> 
+<label for="multiple_attacks">Multiple attacks per day</label> 
 <br>
 <input type="radio" name="attacks" id="constant_pain" />
-<label for="constant_pain">Constant pain?</label> 
+<label for="constant_pain">Constant pain</label> 
 <br>
 <h5>Sex of the patient</h5>
 <br>
@@ -167,7 +171,7 @@ dot = (a, b) => a.map((x, i) => a[i] * b[i]).reduce((m, n) => m + n);
 <input type="radio" name="sex" id="sex_male" />
 <label for="sex_male">male</label> 
 <br>
-<h5>Any history of the following</h5>
+<h5>Please select if you have any history of the following conditions</h5>
 <br>
 <label for="thyroid">Hypothyroidism</label> 
 <input type="checkbox" name="thyroid" id="thyroid" />
@@ -184,7 +188,7 @@ dot = (a, b) => a.map((x, i) => a[i] * b[i]).reduce((m, n) => m + n);
 <label for="psychiatric">Depression / Anxiety</label> 
 <input type="checkbox" name="psychiatric" id="psychiatric" />
 <br>
-<h5>Pain description</h5>
+<h5>Please select all that is describing your pain character</h5>
 <br>
 <label for="electric_pain">Pain is electric shock-like</label> 
 <input type="checkbox" name="electric_pain" id="electric_pain" />
