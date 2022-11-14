@@ -206,4 +206,4 @@ dot = (a, b) => a.map((x, i) => a[i] * b[i]).reduce((m, n) => m + n);
 <label for="pain_side_left">Left</label> 
 <br>
 <br>
-<input type="button" value="Get pain stage" onclick="test();"/>
+<input type="button" class="btn btn-primary fs-5 mb-4 mb-md-0 mr-2" value="Get pain stage" onclick="test();"/>
