@@ -141,16 +141,22 @@ dot = (a, b) => a.map((x, i) => a[i] * b[i]).reduce((m, n) => m + n);
 <br>
 <input type="radio" name="attacks" id="no_attacks" />
 <label for="no_attacks">Rare attacks?</label> 
+<br>
 <input type="radio" name="attacks" id="seasonal_attacks" />
 <label for="seasonal_attacks">Seasonal attacks?</label> 
+<br>
 <input type="radio" name="attacks" id="monthly_attacks" />
 <label for="monthly_attacks">Monthly attacks?</label> 
+<br>
 <input type="radio" name="attacks" id="weekly_attacks" />
 <label for="weekly_attacks">Weekly attacks?</label> 
+<br>
 <input type="radio" name="attacks" id="daily_attacks" />
 <label for="daily_attacks">Daily attacks?</label> 
+<br>
 <input type="radio" name="attacks" id="multiple_attacks" />
 <label for="multiple_attacks">Multiple attacks per day?</label> 
+<br>
 <input type="radio" name="attacks" id="constant_pain" />
 <label for="constant_pain">Constant pain?</label> 
 <br>
