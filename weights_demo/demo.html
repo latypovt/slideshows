@@ -50,8 +50,8 @@
 	    <label for="cancer">Cancer</label> 
 	    <input type="checkbox" name="cancer" id="cancer" />
 	    <br>
-	    <label for="musculoskeletal">Arthritis</label> 
-	    <input type="checkbox" name="musculoskeletal" id="musculoskeletal" />
+	    <label for="muskuloskeletal">Arthritis</label> 
+	    <input type="checkbox" name="muskuloskeletal" id="muskuloskeletal" />
 	    <br>
 	    <label for="psychiatric">Depression / Anxiety</label> 
 	    <input type="checkbox" name="psychiatric" id="psychiatric" />
@@ -74,8 +74,8 @@
             <h5>Side of pain</h5>
 	    <input type="radio" name="pain_side" id="pain_side_right" />
 	    <label for="pain_side_right">Right</label> 
-	    <input type="radio" name="pain_side" id="pain_side_leftt" />
-	    <label for="pain_side_leftt">Left</label> 
+	    <input type="radio" name="pain_side" id="pain_side_left" />
+	    <label for="pain_side_left">Left</label> 
 	    <br>
 	    <input type="submit" value="Get pain stage"/>
 	  </form>
@@ -104,29 +104,94 @@
                   "trigeminal_deficit": 0.015018209680008613,
                   "psychiatric": -0.0046296250086506575
               };
-//	      alert(`The function 'test' is executed`);
-//	      alert(dot(weights, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]));
-	      alert(dot2(weights, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]));
+	      individual_rating = dot2(weights);  // This computes the pain stage.
+	      alert("The individual rating is: " + individual_rating);
 	    }
             function get_value_from_key(key) {
                 // TODO: do subcases for each key option
+                list_pain_frequency = ["no_attacks", "seasonal_attacks", "multiple_attacks", "constant_pain", "monthly_attacks", "daily_attacks", "weekly_attacks"];
                 if (key == "med_relief") {
                     bool_yes = document.getElementById("med_relief_yes").checked;
                     bool_no = document.getElementById("med_relief_no").checked;
-                    if (!bool_yes & !bool_no) {
+                    if (!bool_yes && !bool_no) {
                         alert("Please choose an answer for 'med_relief'!");
                     }
                     else {
-                        if (bool_yes) {answer = "yes";} else {answer = "no";}
-                        alert("Answer for 'med_relief' is: " + answer);
+                        if (bool_yes) { return 1; } else { return -1; }
                     }
-                }
+	       }
+	       else if (key == "sex") {
+                    bool_male = document.getElementById("sex_male").checked;
+                    bool_female = document.getElementById("sex_female").checked;
+                    if (!bool_female && !bool_male) {
+                        alert("Please choose an answer for 'sex'!");
+                    }
+                    else {
+                        if (bool_male) { return -1; } else { return 1; }
+                    }
+               }
+	       else if (key == "age") {
+			age = parseInt(document.getElementById(key).value);
+			age = (age_mu - age) / age_sigma;
+			return age;
+               }
+               else if (key == "psychiatric") {
+			if (document.getElementById(key).checked) { return 1; } else { return -1; }
+               }
+               else if (key == "trigeminal_deficit") {
+			if (document.getElementById(key).checked) { return 1; } else { return -1; }
+               }
+               else if (key == "pain_side") {
+                    bool_right = document.getElementById("pain_side_right").checked;
+                    bool_left = document.getElementById("pain_side_left").checked;
+                    if (!bool_right && !bool_left) {
+                        alert("Please choose an answer for 'pain_side'!");
+                    }
+                    else {
+                        if (bool_right) { return -1; } else { return 1; }
+                    }
+               }
+               else if (key == "thyroid") {
+			if (document.getElementById(key).checked) { return 1; } else { return -1; }
+               }
+               else if (key == "diabetes") {
+			if (document.getElementById(key).checked) { return 1; } else { return -1; }
+               }
+               else if (key == "triggers") {
+			if (document.getElementById(key).checked) { return 1; } else { return -1; }
+               }
+               else if (key == "cancer") {
+			if (document.getElementById(key).checked) { return 1; } else { return -1; }
+               }
+               else if (key == "electric_pain") {
+			if (document.getElementById(key).checked) { return 1; } else { return -1; }
+               }
+               else if (key == "muskuloskeletal") {
+			if (document.getElementById(key).checked) { return 1; } else { return -1; }
+               }
+	       else if (list_pain_frequency.includes(key)) {
+                bool_no_attacks = document.getElementById("no_attacks").checked;
+                bool_seasonal_attacks = document.getElementById("seasonal_attacks").checked;
+                bool_multiple_attacks = document.getElementById("multiple_attacks").checked;
+                bool_constant_pain = document.getElementById("constant_pain").checked;
+                bool_monthly_attacks = document.getElementById("monthly_attacks").checked;
+                bool_daily_attacks = document.getElementById("daily_attacks").checked;
+                bool_weekly_attacks = document.getElementById("weekly_attacks").checked;
+		if (!bool_no_attacks && !bool_seasonal_attacks && !bool_multiple_attacks && !bool_constant_pain && !bool_monthly_attacks && !bool_daily_attacks && !bool_weekly_attacks)
+		{alert("Please choose an answer for pain frequency!");}
+		else {
+			if (document.getElementById(key).checked) { return 1; } else { return -1; }
+		}
+               } else {
+		alert("not covered yet");
+	       }
             }
-            function dot2(w, pat) {
+            function dot2(w) {
                 var result = 0;
                 for (var key in w) {
                     if (w.hasOwnProperty(key)) {
                         answer_value = get_value_from_key(key);
+//			alert("Value for '" + key + "': " + answer_value);
                         result += w[key] * answer_value;
                     }
                 }
