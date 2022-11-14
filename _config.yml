@@ -4,4 +4,4 @@ description: Projects and demos
 baseurl: "/slideshows"
 url: "https://latypovt.github.io/"
 
-include: ['_pages']
+include: ['_pages', 'RD_QR_slide']
