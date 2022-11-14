@@ -34,7 +34,7 @@ message = {
 2: "1 - 3 years of pain relief",
 3: "3 - 5 years of pain relief",
 4: "more than 5 years of pain relief (superresponder)"
-}
+};
 results = dot2(weights);
 alert("The individual rating is: " + results[0] + ", i.e. " + message[results[1]]);
 }
