@@ -131,9 +131,10 @@ return [result, i];
 }
 dot = (a, b) => a.map((x, i) => a[i] * b[i]).reduce((m, n) => m + n);
 </script>
-<h4>Trigeminal neuralgia grading framework</h4>
-This framework can help you to estimate the severity of your trigeminal neuralgia and expected duration of response to MVD/GK surgery. Please answer the following question
+<h1>Trigeminal neuralgia grading framework (DEMO) </h1>
+This framework can help you to estimate the severity of your trigeminal neuralgia and expected duration of response to MVD/GK surgery. Please answer the following questions
 
+    NB! This is a demonstration and NOT a clinical tool
 
 <h5>Does the TN medication provides you with sufficient relief?</h5>
 <input type="radio" name="med_relief" id="med_relief_yes" />

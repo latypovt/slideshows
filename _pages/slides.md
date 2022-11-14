@@ -13,7 +13,6 @@ Here you can find a supplementary materials and the interactive demo for grading
 [To the TN grading demo](../grades){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 <br>
-<br>
 
 Check out our lab website to learn about our research
 
