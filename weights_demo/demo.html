@@ -104,8 +104,15 @@
                   "trigeminal_deficit": 0.015018209680008613,
                   "psychiatric": -0.0046296250086506575
               };
-	      individual_rating = dot2(weights);  // This computes the pain stage.
-	      alert("The individual rating is: " + individual_rating);
+              message = {
+		0: "non-responder",
+		1: "less than 1 year of pain relief",
+		2: "1 - 3 years of pain relief",
+		3: "3 - 5 years of pain relief",
+		4: "more than 5 years of pain relief (superresponder)"
+	      }
+	      results = dot2(weights);  // This computes the pain stage. (individual rating, interval)
+	      alert("The individual rating is: " + results[0] + ", i.e. " + message[results[1]]);
 	    }
             function get_value_from_key(key) {
                 // TODO: do subcases for each key option
@@ -187,6 +194,7 @@
 	       }
             }
             function dot2(w) {
+		upper_bounds = [-0.412398, -0.112271, 0.300276, 0.746593, Infinity];
                 var result = 0;
                 for (var key in w) {
                     if (w.hasOwnProperty(key)) {
@@ -195,7 +203,9 @@
                         result += w[key] * answer_value;
                     }
                 }
-                return result;
+		i = 0;
+		while (result > upper_bounds[i]) { i++; }
+                return [result, i];
             }
             dot = (a, b) => a.map((x, i) => a[i] * b[i]).reduce((m, n) => m + n);
 	  </script>
