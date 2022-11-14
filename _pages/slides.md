@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Slideshow
+title: Supplementary materials
 permalink: /RD_QR_slide/index.html
 ---
 [To the supplementary slides](slides.html){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
