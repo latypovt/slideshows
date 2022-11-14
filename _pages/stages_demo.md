@@ -1,7 +1,7 @@
 ---
 layout: default
 title: TN Grades
-permalink: /grades
+permalink: /RD_QR_slide/index.html
 ---
 <script>
 function test() {
