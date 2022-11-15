@@ -36,7 +36,7 @@ message = {
 4: "more than 5 years of pain relief (superresponder)"
 };
 results = dot2(weights);
-alert("The calculated rating is: " + results[0] + ", it corresponds to the category of '" + message[results[1]] + "' in our data" );
+alert("The calculated rating is: " + parseFloat(results[0]).toFixed(2) + ", it corresponds to the category of '" + message[results[1]] + "' in our data" );
 }
 function get_value_from_key(key) {
 list_pain_frequency = ["no_attacks", "seasonal_attacks", "multiple_attacks", "constant_pain", "monthly_attacks", "daily_attacks", "weekly_attacks"];
@@ -133,16 +133,10 @@ dot = (a, b) => a.map((x, i) => a[i] * b[i]).reduce((m, n) => m + n);
 </script>
 <h1>Trigeminal neuralgia grading framework (DEMO) </h1>
 
-This framework can help you to estimate the severity of your trigeminal neuralgia and expected duration of response to MVD/GK surgery. Please answer the following questions
+This is the simplified demonstration of how the MVD/GK response time can be assessed based on the set of questions about the Trigeminal Neuralgia symptoms. Please answer the following questions
 
     NB! This is a demonstration and NOT a clinical tool
 
-<h5>Does the TN medication provides you with sufficient relief?</h5>
-<input type="radio" name="med_relief" id="med_relief_yes" />
-<label for="med_relief_yes">yes</label> 
-<input type="radio" name="med_relief" id="med_relief_no" />
-<label for="med_relief_no">no</label> 
-<br>
 <h5>How frequent your pain episodes are?</h5>
 <br>
 <input type="radio" name="attacks" id="no_attacks" />
@@ -165,6 +159,29 @@ This framework can help you to estimate the severity of your trigeminal neuralgi
 <br>
 <input type="radio" name="attacks" id="constant_pain" />
 <label for="constant_pain">Constant pain</label> 
+<br>
+<h5>Side of pain</h5>
+<input type="radio" name="pain_side" id="pain_side_right" />
+<label for="pain_side_right">Right</label> 
+<input type="radio" name="pain_side" id="pain_side_left" />
+<label for="pain_side_left">Left</label> 
+<br>
+<h5>Does the TN medication provides you with sufficient relief?</h5>
+<input type="radio" name="med_relief" id="med_relief_yes" />
+<label for="med_relief_yes">yes</label> 
+<input type="radio" name="med_relief" id="med_relief_no" />
+<label for="med_relief_no">no</label> 
+<br>
+<h5>Please select all that is describing your pain character (leave blank if not applicable)</h5>
+<br>
+<label for="electric_pain">Pain is electric shock-like</label> 
+<input type="checkbox" name="electric_pain" id="electric_pain" />
+<br>
+<label for="triggers">Pain is occurring spontaneously (no triggers)</label> 
+<input type="checkbox" name="triggers" id="triggers" />
+<br>
+<label for="trigeminal_deficit">Increased / decreased sensitivity in the area of CN-V</label> 
+<input type="checkbox" name="trigeminal_deficit" id="trigeminal_deficit" />
 <br>
 <h5>Sex</h5>
 <br>
@@ -190,26 +207,9 @@ This framework can help you to estimate the severity of your trigeminal neuralgi
 <label for="psychiatric">Depression / Anxiety</label> 
 <input type="checkbox" name="psychiatric" id="psychiatric" />
 <br>
-<h5>Please select all that is describing your pain character (leave blank if not applicable)</h5>
-<br>
-<label for="electric_pain">Pain is electric shock-like</label> 
-<input type="checkbox" name="electric_pain" id="electric_pain" />
-<br>
-<label for="triggers">Pain is occurring spontaneously (no triggers)</label> 
-<input type="checkbox" name="triggers" id="triggers" />
-<br>
-<label for="trigeminal_deficit">Increased / decreased sensitivity in the area of CN-V</label> 
-<input type="checkbox" name="trigeminal_deficit" id="trigeminal_deficit" />
-<br>
 <h5>Age</h5>
 <input type="number" name="age" id="age" />
 <label for="age">in years</label> 
-<br>
-<h5>Side of pain</h5>
-<input type="radio" name="pain_side" id="pain_side_right" />
-<label for="pain_side_right">Right</label> 
-<input type="radio" name="pain_side" id="pain_side_left" />
-<label for="pain_side_left">Left</label> 
 <br>
 <br>
 <input type="button" class="btn btn-primary fs-5 mb-4 mb-md-0 mr-2" value="Get pain grade" onclick="test();"/>
