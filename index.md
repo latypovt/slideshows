@@ -22,7 +22,7 @@ Check our previous work on **Trigeminal neuralgia** and **Myelin mapping**
 [Myelin mapping](/IASP2022_MM/myelinmap.html){: .btn .btn-red .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 
-[ TN grading demo](../grades){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[ TN grading demo](grades){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 .mr-2 }
 <br>
 
 Check out our lab website to learn about our research
