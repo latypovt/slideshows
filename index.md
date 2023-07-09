@@ -19,7 +19,7 @@ Check our previous work on **Trigeminal neuralgia** and **Myelin mapping**
 [TN and surgical response](/RD_QR)slide/slides.html){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 
-[Myelin mapping](/IASP2022_MM/myelinmap.html){: .btn .btn-pink .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Myelin mapping](/IASP2022_MM/myelinmap.html){: .btn .btn-red .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 
 [ TN grading demo](../grades){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 .mr-2 }
