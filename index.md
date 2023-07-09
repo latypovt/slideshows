@@ -17,7 +17,7 @@ Thanks for stopping by our poster at OHBM 2023! Here you can find supplementary 
 
 ## Our previous work 
 {: .d-inline-block .no_toc }
-2022
+2021-2022
 {: .label .label-blue }
 
 Check our previous work on **Trigeminal neuralgia** and **Myelin mapping**
