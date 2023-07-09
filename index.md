@@ -6,7 +6,7 @@ title: Supplementary materials
 # Welcome 
 ## New content
 {: .d-inline-block .no_toc }
-2022
+2023
 {: .label .label-green }
 
 Thanks for stopping by our poster at OHBM 2023! Here you can find supplementary materials on our **MR imaging synthesis framework** project
