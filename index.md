@@ -11,7 +11,7 @@ title: Supplementary materials
 
 Thanks for stopping by our poster at Neuroscience 2023! Here you can find supplementary materials on our  study
 
-[To the supplemental slides](/SfNConv/index.html){: .btn .btn-purple .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[To the supplemental slides](/SfNConv/sfnconf.html){: .btn .btn-purple .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 
 
