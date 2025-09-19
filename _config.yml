@@ -4,4 +4,4 @@ description: Projects and demos
 base: "/supplemental"
 url: "https://latypovt.github.io/"
 
-include: ['_pages', 'RD_QR_slide', 'OHBM_Conv', 'IASP2022_MM', 'Neuronto']
+include: ['_pages', 'Neuronto', 'RD_QR_slide', 'OHBM_Conv', 'IASP2022_MM']
