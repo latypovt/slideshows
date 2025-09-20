@@ -2,5 +2,6 @@ remote_theme: pmarsceill/just-the-docs
 title: Projects of TH Latypov
 description: Projects and demos
 url: "https://latypovt.github.io/"
+baseurl: "/slideshows"
 
 include: ['_pages', 'Neuronto', 'RD_QR_slide', 'OHBM_Conv', 'IASP2022_MM']
