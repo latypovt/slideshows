@@ -1,7 +1,11 @@
-remote_theme: pmarsceill/just-the-docs
-title: Projects of TH Latypov
-description: Projects and demos
-url: "https://latypovt.github.io"
-baseurl: "/slideshows"
+title: Slideshows
+url: "https://latypovt.github.io"     # no trailing slash
+baseurl: "/slideshows"                 # MUST start with a slash
+theme: jekyll-theme-minimal            # gives you a default layout
+plugins: []                            # avoid unsupported plugins for now
 
-include: ['_pages', 'Neuronto', 'RD_QR_slide', 'OHBM_Conv', 'IASP2022_MM']
+# If you want to keep using `_pages` as a collection:
+collections:
+  pages:
+    output: true
+    permalink: /:path/
