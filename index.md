@@ -6,4 +6,4 @@ title: Slideshows and supplemental content
 
 # Slideshows and supplemental content
 
-- <a href="{{ '/Neuronto/' | relative_url }}">Neuronto supplemental content</a>
+- <a href="{{ '/Neuronto/' | Neuronto.html }}">Neuronto supplemental content</a>
