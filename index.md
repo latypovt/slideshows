@@ -3,7 +3,6 @@ layout: default
 title: Slideshows and supplemental content
 ---
 
-
 # Slideshows and supplemental content
 
-- <a href="{{ 'slideshows/Neuronto/Neuronto.html' }}">Neuronto supplemental content</a>
+- <a href="{{ '/Neuronto/Neuronto.html' | relative_url }}">Neuronto supplemental content</a>
